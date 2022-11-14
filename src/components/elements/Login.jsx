@@ -19,10 +19,10 @@ const Login = () => {
           sessionStorage.setItem("auth",res._tokenResponse.refreshToken)
           navigate('/home')
         }).catch(e =>{
-          if(e.code== "auth/wrong-password"){
+          if(e.code=== "auth/wrong-password"){
             toast.error('please check your password')
           }
-          if(e.code== "auth/user-not-found"){
+          if(e.code=== "auth/user-not-found"){
             toast.error('please check your email')
           }
         });
